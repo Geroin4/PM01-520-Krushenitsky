@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище ISIP520KrushEXModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Город">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="float" Nullable="false" />
+    <Property Name="Название" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "4ISIP520KrushEX.dbo.Жюри" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="Жюри">
+    <Key>
+      <PropertyRef Name="ФИО" />
+      <PropertyRef Name="Пол" />
+      <PropertyRef Name="Почта" />
+      <PropertyRef Name="Дата_Рождение" />
+      <PropertyRef Name="Страна" />
+      <PropertyRef Name="Телефон" />
+      <PropertyRef Name="Направление" />
+      <PropertyRef Name="Пароль" />
+      <PropertyRef Name="фото" />
+    </Key>
+    <Property Name="ФИО" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Пол" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Почта" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Дата_Рождение" Type="datetime" Nullable="false" />
+    <Property Name="Страна" Type="float" Nullable="false" />
+    <Property Name="Телефон" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Направление" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Пароль" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="фото" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Мероприятия">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="float" Nullable="false" />
+    <Property Name="Событие" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="DATE" Type="datetime" Nullable="false" />
+    <Property Name="DAYS" Type="float" Nullable="false" />
+    <Property Name="Город" Type="float" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "4ISIP520KrushEX.dbo.Модераторы" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="Модераторы">
+    <Key>
+      <PropertyRef Name="ФИО" />
+      <PropertyRef Name="Пол" />
+      <PropertyRef Name="Почта" />
+      <PropertyRef Name="Дата_рождения" />
+      <PropertyRef Name="Страна" />
+      <PropertyRef Name="Телефон" />
+      <PropertyRef Name="Направление" />
+      <PropertyRef Name="Мероприятие" />
+      <PropertyRef Name="Пароль" />
+      <PropertyRef Name="Фото" />
+    </Key>
+    <Property Name="ФИО" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Пол" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Почта" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Дата_рождения" Type="datetime" Nullable="false" />
+    <Property Name="Страна" Type="float" Nullable="false" />
+    <Property Name="Телефон" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Направление" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Мероприятие" Type="float" Nullable="false" />
+    <Property Name="Пароль" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Фото" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "4ISIP520KrushEX.dbo.Организаторы" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="Организаторы">
+    <Key>
+      <PropertyRef Name="ФИО" />
+      <PropertyRef Name="Почта" />
+      <PropertyRef Name="Дата_рождения" />
+      <PropertyRef Name="страна" />
+      <PropertyRef Name="телефон" />
+      <PropertyRef Name="пароль" />
+      <PropertyRef Name="фото" />
+      <PropertyRef Name="пол" />
+    </Key>
+    <Property Name="ФИО" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Почта" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Дата_рождения" Type="datetime" Nullable="false" />
+    <Property Name="страна" Type="float" Nullable="false" />
+    <Property Name="телефон" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="пароль" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="фото" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="пол" Type="nvarchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Страны">
+    <Key>
+      <PropertyRef Name="Код2" />
+    </Key>
+    <Property Name="Название_страны" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Английское_название" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Код" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Код2" Type="float" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "4ISIP520KrushEX.dbo.Участники" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="Участники">
+    <Key>
+      <PropertyRef Name="ФИО" />
+      <PropertyRef Name="Почта" />
+      <PropertyRef Name="Дата_Рождения" />
+      <PropertyRef Name="страна" />
+      <PropertyRef Name="телефон" />
+      <PropertyRef Name="пароль" />
+      <PropertyRef Name="фото" />
+      <PropertyRef Name="пол" />
+    </Key>
+    <Property Name="ФИО" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Почта" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Дата_Рождения" Type="datetime" Nullable="false" />
+    <Property Name="страна" Type="float" Nullable="false" />
+    <Property Name="телефон" Type="float" Nullable="false" />
+    <Property Name="пароль" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="фото" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="пол" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Жюри_Страны">
+    <End Role="Страны" Type="Self.Страны" Multiplicity="1" />
+    <End Role="Жюри" Type="Self.Жюри" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Страны">
+        <PropertyRef Name="Код2" />
+      </Principal>
+      <Dependent Role="Жюри">
+        <PropertyRef Name="Страна" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Мероприятия_Город">
+    <End Role="Город" Type="Self.Город" Multiplicity="1" />
+    <End Role="Мероприятия" Type="Self.Мероприятия" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Город">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Мероприятия">
+        <PropertyRef Name="Город" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Модераторы_Мероприятия">
+    <End Role="Мероприятия" Type="Self.Мероприятия" Multiplicity="1" />
+    <End Role="Модераторы" Type="Self.Модераторы" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Мероприятия">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Модераторы">
+        <PropertyRef Name="Мероприятие" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Модераторы_Страны">
+    <End Role="Страны" Type="Self.Страны" Multiplicity="1" />
+    <End Role="Модераторы" Type="Self.Модераторы" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Страны">
+        <PropertyRef Name="Код2" />
+      </Principal>
+      <Dependent Role="Модераторы">
+        <PropertyRef Name="Страна" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Организаторы_Страны">
+    <End Role="Страны" Type="Self.Страны" Multiplicity="1" />
+    <End Role="Организаторы" Type="Self.Организаторы" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Страны">
+        <PropertyRef Name="Код2" />
+      </Principal>
+      <Dependent Role="Организаторы">
+        <PropertyRef Name="страна" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Участники_Страны">
+    <End Role="Страны" Type="Self.Страны" Multiplicity="1" />
+    <End Role="Участники" Type="Self.Участники" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Страны">
+        <PropertyRef Name="Код2" />
+      </Principal>
+      <Dependent Role="Участники">
+        <PropertyRef Name="страна" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище ISIP520KrushEXModelContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Город" EntityType="Self.Город" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Мероприятия" EntityType="Self.Мероприятия" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Страны" EntityType="Self.Страны" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Жюри" EntityType="Self.Жюри" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Жюри].[ФИО] AS [ФИО], 
+    [Жюри].[Пол] AS [Пол], 
+    [Жюри].[Почта] AS [Почта], 
+    [Жюри].[Дата_Рождение] AS [Дата_Рождение], 
+    [Жюри].[Страна] AS [Страна], 
+    [Жюри].[Телефон] AS [Телефон], 
+    [Жюри].[Направление] AS [Направление], 
+    [Жюри].[Пароль] AS [Пароль], 
+    [Жюри].[фото] AS [фото]
+    FROM [dbo].[Жюри] AS [Жюри]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Модераторы" EntityType="Self.Модераторы" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Модераторы].[ФИО] AS [ФИО], 
+    [Модераторы].[Пол] AS [Пол], 
+    [Модераторы].[Почта] AS [Почта], 
+    [Модераторы].[Дата_рождения] AS [Дата_рождения], 
+    [Модераторы].[Страна] AS [Страна], 
+    [Модераторы].[Телефон] AS [Телефон], 
+    [Модераторы].[Направление] AS [Направление], 
+    [Модераторы].[Мероприятие] AS [Мероприятие], 
+    [Модераторы].[Пароль] AS [Пароль], 
+    [Модераторы].[Фото] AS [Фото]
+    FROM [dbo].[Модераторы] AS [Модераторы]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Организаторы" EntityType="Self.Организаторы" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Организаторы].[ФИО] AS [ФИО], 
+    [Организаторы].[Почта] AS [Почта], 
+    [Организаторы].[Дата_рождения] AS [Дата_рождения], 
+    [Организаторы].[страна] AS [страна], 
+    [Организаторы].[телефон] AS [телефон], 
+    [Организаторы].[пароль] AS [пароль], 
+    [Организаторы].[фото] AS [фото], 
+    [Организаторы].[пол] AS [пол]
+    FROM [dbo].[Организаторы] AS [Организаторы]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Участники" EntityType="Self.Участники" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Участники].[ФИО] AS [ФИО], 
+    [Участники].[Почта] AS [Почта], 
+    [Участники].[Дата_Рождения] AS [Дата_Рождения], 
+    [Участники].[страна] AS [страна], 
+    [Участники].[телефон] AS [телефон], 
+    [Участники].[пароль] AS [пароль], 
+    [Участники].[фото] AS [фото], 
+    [Участники].[пол] AS [пол]
+    FROM [dbo].[Участники] AS [Участники]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Жюри_Страны" Association="Self.FK_Жюри_Страны">
+      <End Role="Страны" EntitySet="Страны" />
+      <End Role="Жюри" EntitySet="Жюри" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Мероприятия_Город" Association="Self.FK_Мероприятия_Город">
+      <End Role="Город" EntitySet="Город" />
+      <End Role="Мероприятия" EntitySet="Мероприятия" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Модераторы_Мероприятия" Association="Self.FK_Модераторы_Мероприятия">
+      <End Role="Мероприятия" EntitySet="Мероприятия" />
+      <End Role="Модераторы" EntitySet="Модераторы" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Модераторы_Страны" Association="Self.FK_Модераторы_Страны">
+      <End Role="Страны" EntitySet="Страны" />
+      <End Role="Модераторы" EntitySet="Модераторы" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Организаторы_Страны" Association="Self.FK_Организаторы_Страны">
+      <End Role="Страны" EntitySet="Страны" />
+      <End Role="Организаторы" EntitySet="Организаторы" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Участники_Страны" Association="Self.FK_Участники_Страны">
+      <End Role="Страны" EntitySet="Страны" />
+      <End Role="Участники" EntitySet="Участники" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

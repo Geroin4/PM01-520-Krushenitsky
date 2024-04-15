@@ -1,0 +1,39 @@
+﻿<Page x:Class="MeropriatiyaKrush.Pages.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MeropriatiyaKrush.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Background="White"
+      Title="MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image HorizontalAlignment="Left" Height="113" VerticalAlignment="Top" Width="200" Grid.Column="1" Grid.Row="2"/>
+        <Button Click="Button_Click_1" Content="Дата" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Width="109" Height="25"/>
+        <Button Click="Button_Click_2" Content="Город" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center" Width="109"  Height="25"/>
+        <Button Click="Button_Click_3" Content="Время" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Bottom" Width="109" Height="25"/>
+        <TextBlock Name="Txb1" Grid.Column="2" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="224" Width="200" Grid.RowSpan="2"/>
+        <DataGrid Name="DataGridUser"  AutoGenerateColumns="False" SelectionChanged="DataGridUser_SelectionChanged"  IsReadOnly="True" Grid.ColumnSpan="4" Grid.RowSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Список Мероприятий" Binding="{Binding Событие}" Width="250"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Click="Button_Click_4" Content="Авторизация" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="115" Grid.Column="3" Height="25"/>
+
+    </Grid>
+</Page>

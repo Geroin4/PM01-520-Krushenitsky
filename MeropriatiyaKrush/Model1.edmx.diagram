@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="15d172fddbe948298d1a27991c05de44" Name="Diagram1">
+        <EntityTypeShape EntityType="ISIP520KrushEXModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISIP520KrushEXModel.Город" Width="1.5" PointX="1.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISIP520KrushEXModel.Мероприятия" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISIP520KrushEXModel.Страны" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISIP520KrushEXModel.Жюри" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISIP520KrushEXModel.Модераторы" Width="1.5" PointX="6" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISIP520KrushEXModel.Организаторы" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISIP520KrushEXModel.Участники" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
+        <AssociationConnector Association="ISIP520KrushEXModel.FK_Мероприятия_Город" ManuallyRouted="false" />
+        <AssociationConnector Association="ISIP520KrushEXModel.FK_Модераторы_Мероприятия" ManuallyRouted="false" />
+        <AssociationConnector Association="ISIP520KrushEXModel.FK_Жюри_Страны" ManuallyRouted="false" />
+        <AssociationConnector Association="ISIP520KrushEXModel.FK_Модераторы_Страны" ManuallyRouted="false" />
+        <AssociationConnector Association="ISIP520KrushEXModel.FK_Организаторы_Страны" ManuallyRouted="false" />
+        <AssociationConnector Association="ISIP520KrushEXModel.FK_Участники_Страны" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
